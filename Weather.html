@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chandan Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    min-height:100vh;
+    color:white;
+    padding-bottom:80px;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,.1);
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:#ffd369;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px 20px;
+}
+
+.hero-content{
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(20px);
+    padding:50px;
+    border-radius:25px;
+    width:90%;
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:60px;
+}
+
+.hero span{
+    color:#ffd369;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:18px;
+}
+
+.btn{
+    margin-top:25px;
+    display:inline-block;
+    background:#ffd369;
+    color:#222;
+    padding:12px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.weather-card{
+    margin-top:30px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.weather-card h3{
+    font-size:24px;
+}
+
+.weather-card h1{
+    font-size:48px;
+}
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+}
+
+.about-card,
+.skill-card,
+.project-card,
+.contact-card{
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+}
+
+.about-card{
+    text-align:center;
+    line-height:1.8;
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+
+.skill-card{
+    text-align:center;
+    font-size:20px;
+    transition:.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.project-card{
+    transition:.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+}
+
+.project-card h3{
+    margin-bottom:10px;
+}
+
+.contact-card{
+    text-align:center;
+}
+
+.contact-card p{
+    margin:10px 0;
+}
+
+footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    text-align:center;
+    padding:15px;
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(15px);
+}
+
+@media (max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav a{
+        margin:0 10px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .weather-card{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .weather-card h1{
+        font-size:36px;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Chandan</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>Hi, I'm <span>Chandan</span></h1>
+
+        <p>
+            Web Developer • Python Developer • Robotics Enthusiast
+        </p>
+
+        <a href="#projects" class="btn">View Projects</a>
+
+        <div class="weather-card">
+
+            <div>
+                <h3 id="cityName">Loading...</h3>
+                <p id="weatherDesc">Fetching weather...</p>
+            </div>
+
+            <div>
+                <h1 id="temperature">--°C</h1>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-card">
+
+        <p>
+            I am a passionate developer interested in Web Development,
+            Python, Robotics, Artificial Intelligence and IoT.
+            I enjoy building projects that solve real-world problems
+            and continuously learning new technologies.
+        </p>
+
+    </div>
+
+</section>
+
+<section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills">
+
+        <div class="skill-card">HTML</div>
+        <div class="skill-card">CSS</div>
+        <div class="skill-card">JavaScript</div>
+        <div class="skill-card">Python</div>
+        <div class="skill-card">React</div>
+        <div class="skill-card">MongoDB</div>
+        <div class="skill-card">Docker</div>
+        <div class="skill-card">GitHub</div>
+
+    </div>
+
+</section>
+
+<section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects">
+
+        <div class="project-card">
+            <h3>🌤 Weather App</h3>
+            <p>
+                Real-time weather application using Open-Meteo API.
+                Shows temperature, humidity, wind speed and weather forecasts.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>📚 LMS System</h3>
+            <p>
+                Learning Management System with student management,
+                attendance and reporting.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>🤖 Line Follower Robot</h3>
+            <p>
+                Arduino based autonomous robot using IR sensors and PID control.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>📊 Attendance Management</h3>
+            <p>
+                Attendance tracking system with Excel and database integration.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact-card">
+
+        <p>📧 chaggan.calling04@gmail.com</p>
+        <p>🐙 github.com/chandan-9535823208</p>
+        <p>💼 linkedin.com/in/chandan-k-14480735b</p>
+        <p>📱 +919835823208</p>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Chandan Portfolio | All Rights Reserved
+</footer>
+
+<script>
+async function loadWeather(){
+
+    try{
+
+        const geo = await fetch(
+        "https://geocoding-api.open-meteo.com/v1/search?name=Patna&count=1"
+        );
+
+        const geoData = await geo.json();
+
+        const lat = geoData.results[0].latitude;
+        const lon = geoData.results[0].longitude;
+
+        const weather = await fetch(
+        `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code`
+        );
+
+        const weatherData = await weather.json();
+
+        document.getElementById("cityName").innerText =
+        geoData.results[0].name + ", " + geoData.results[0].country;
+
+        document.getElementById("temperature").innerText =
+        Math.round(weatherData.current.temperature_2m) + "°C";
+
+        const weatherMap = {
+            0:"☀️ Clear Sky",
+            1:"🌤️ Mainly Clear",
+            2:"⛅ Partly Cloudy",
+            3:"☁️ Overcast",
+            61:"🌧️ Rain",
+            95:"⛈️ Thunderstorm"
+        };
+
+        document.getElementById("weatherDesc").innerText =
+        weatherMap[weatherData.current.weather_code] || "Weather";
+
+    }catch(err){
+        console.log(err);
+    }
+}
+
+loadWeather();
+</script>
+
+</body>
+</html>
